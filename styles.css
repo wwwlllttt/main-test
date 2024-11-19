@@ -1,0 +1,109 @@
+/* Basic reset for margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Bauhaus style background */
+body {
+    background-color: #f5f5f5; /* Light grey background */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333; /* Dark grey text */
+}
+
+/* Styling for the tile container */
+.tile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff; /* White background to contrast with the grey */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Common styling for all tiles */
+.tile {
+    border: 2px solid #ddd; /* Light grey border */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #fff; /* White text */
+    transform: scale(0.95); /* Slightly shrunk by default */
+    opacity: 0; /* Initially invisible */
+    animation: fadeInScale 1s ease-out forwards; /* Animation applied */
+}
+
+/* Animation for fade-in and scale effect */
+@keyframes fadeInScale {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Staggered animation delay for each tile */
+.tile-1 {
+    background-color: #B0BEC5; /* Light Blue Grey */
+    animation-delay: 0s;
+}
+
+.tile-2 {
+    background-color: #90A4AE; /* Blue Grey */
+    animation-delay: 0.2s;
+}
+
+.tile-3 {
+    background-color: #78909C; /* Slate Grey */
+    animation-delay: 0.4s;
+}
+
+.tile-4 {
+    background-color: #607D8B; /* Charcoal Grey */
+    animation-delay: 0.6s;
+}
+
+/* Hover effects for the tiles */
+.tile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the anchor tags */
+.tile a {
+    text-decoration: none;
+    color: inherit; /* Keep the text color as it is */
+}
+
+/* Styling for the text inside each tile */
+.tile h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tile p {
+    font-size: 1em;
+}
+
+/* Responsive design: make the tiles stack on smaller screens */
+@media (max-width: 600px) {
+    .tile-container {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}
